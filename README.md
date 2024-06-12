@@ -1,2 +1,5 @@
-# axum-template
-This repository contains code related to web development using `axum` web framework in Rust.
+# stream-questions
+
+This repository contains code related to questions being asked before starting a live stream.
+
+
