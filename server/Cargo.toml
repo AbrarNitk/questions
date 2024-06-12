@@ -9,6 +9,7 @@ edition = "2021"
 axum = { workspace = true }
 tokio = { workspace = true }
 thiserror = { workspace = true }
+anyhow = { workspace = true }
 config = { workspace = true }
 serde = { workspace = true }
 serde_derive = { workspace = true }
@@ -24,4 +25,3 @@ opentelemetry-otlp = { workspace = true }
 opentelemetry-stdout = { workspace = true }
 opentelemetry-semantic-conventions = { workspace = true }
 tracing-bunyan-formatter = { workspace = true }
-

@@ -19,7 +19,6 @@ incremental = true
 overflow-checks = true
 
 
-
 [profile.release]
 opt-level = 3
 debug = false
@@ -48,7 +47,9 @@ overflow-checks = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [workspace.dependencies]
-tokio = { version = "1.35", features = ["full"] } # later we can reduce it to what we actually need
+tokio = { version = "1.35", features = [
+    "full",
+] } # later we can reduce it to what we actually need
 axum = "0.7"
 thiserror = "1.0"
 serde = "1.0"
@@ -56,6 +57,7 @@ serde_derive = "1.0"
 serde_json = "1.0"
 ulid = { version = "1.1", features = ["serde"] }
 config = "0.13"
+anyhow = "1.0"
 
 # logs and tracing related deps
 tracing = "0.1.40"
@@ -67,5 +69,3 @@ opentelemetry-otlp = { version = "0.14", features = ["http-proto", "tls"] }
 opentelemetry-stdout = { version = "0.2", features = ["trace"] }
 opentelemetry-semantic-conventions = "0.13"
 tracing-bunyan-formatter = "0.3"
-
-

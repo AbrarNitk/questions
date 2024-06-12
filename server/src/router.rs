@@ -9,11 +9,11 @@ pub async fn api_router() -> axum::Router {
     axum::Router::new()
         .route(
             "/v1/api/question/",
-            axum::routing::post(crate::controller::question_post),
+            axum::routing::post(crate::controller::create),
         )
         .route(
             "/v1/api/questions/",
-            axum::routing::get(crate::controller::question_list),
+            axum::routing::get(crate::controller::list),
         )
 }
 

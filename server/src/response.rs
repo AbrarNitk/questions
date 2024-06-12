@@ -31,14 +31,11 @@ pub struct ApiError {
     msg: String,
 }
 
-pub fn error(message: &str, status_code: axum::http::StatusCode) -> axum::response::Response {
+pub fn error(msg: String, status_code: axum::http::StatusCode) -> axum::response::Response {
     (
         status_code,
         [(axum::http::header::CONTENT_TYPE, "application/json")],
-        axum::Json(ApiError {
-            success: true,
-            msg: message.to_string(),
-        }),
+        axum::Json(ApiError { success: true, msg }),
     )
         .into_response()
 }
