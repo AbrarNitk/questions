@@ -17,13 +17,30 @@ function popd2() {
   unset PUSHED
 }
 
+function makemigrations() {
+  manage makemigrations $*
+}
+
+function migrate() {
+  manage migrate $*
+}
+
 function manage() {
   pushd2 /dj
-  python3 manage.py $*
+  python manage.py $*
   r=$?
   popd2
   return ${r}
 }
+
+function djshell() {
+  manage shell
+}
+
+function dbshell() {
+  manage dbshell
+}
+
 
 function recreatedb() {
   WHO=`whoami`
