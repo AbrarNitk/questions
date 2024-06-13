@@ -16,6 +16,19 @@ pub async fn create(
     }
 }
 
+pub async fn upvote(
+    axum::extract::State(ctx): axum::extract::State<service::Ctx>,
+    axum::extract::Path(id): axum::extract::Path<i64>,
+) -> axum::response::Response {
+    match service::apis::upvote::upvote(&ctx, id).await {
+        Ok(r) => service::response::success(r),
+        Err(err) => service::response::error(
+            err.to_string(),
+            axum::http::StatusCode::INTERNAL_SERVER_ERROR,
+        ),
+    }
+}
+
 pub async fn list() -> axum::response::Response {
     match service::apis::list_questions::list().await {
         Ok(r) => service::response::success(r),
