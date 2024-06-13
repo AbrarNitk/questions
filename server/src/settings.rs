@@ -1,6 +1,13 @@
 #[derive(serde::Deserialize, Debug)]
 pub struct Settings {
     pub service: ServiceSettings,
+    pub db: Database,
+}
+
+#[derive(serde::Deserialize, Debug)]
+pub struct Database {
+    #[serde(rename = "pg-url")]
+    pub pg_url: String,
 }
 
 #[derive(serde::Deserialize, Debug)]

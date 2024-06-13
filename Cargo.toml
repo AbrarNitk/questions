@@ -58,6 +58,10 @@ serde_json = "1.0"
 ulid = { version = "1.1", features = ["serde"] }
 config = "0.13"
 anyhow = "1.0"
+chrono = "0.4"
+
+# Database dependency
+sqlx = { version = "0.7.4", features = ["chrono", "runtime-tokio"] }
 
 # logs and tracing related deps
 tracing = "0.1.40"

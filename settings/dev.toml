@@ -1,7 +1,9 @@
 [service]
 profile = "dev"
 
+[db]
+pg-url = "postgres://stream_question_user:temp_pass@127.0.0.1:5432/stream_question"
+
 [telemetry]
 otel-exporter-otlp-endpoint = "http://127.0.0.1:4317"
 log-level = "debug,h2=warn"
-
