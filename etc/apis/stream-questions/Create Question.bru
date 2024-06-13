@@ -1,0 +1,18 @@
+meta {
+  name: Create Question
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://127.0.0.1:8000/v1/api/question/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "Abrar Khan",
+    "question": "What are you going to do in the upcoming stream?"
+  }
+}

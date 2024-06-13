@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Question(models.Model):
-    user_name = models.CharField(
+    username = models.CharField(
         max_length=100, help_text="name of user who is posting the question"
     )
     content = models.TextField(

@@ -3,9 +3,11 @@ pub async fn health() -> axum::response::Response {
 }
 
 pub async fn create(
+    axum::extract::State(ctx): axum::extract::State<service::Ctx>,
+    axum::extract::Host(host): axum::extract::Host,
     axum::Json(req): axum::Json<service::apis::create_question::CreateReq>,
 ) -> axum::response::Response {
-    match service::apis::create_question::create(req).await {
+    match service::apis::create_question::create(ctx, host.as_str(), req).await {
         Ok(r) => service::response::success(r),
         Err(err) => service::response::error(
             err.to_string(),
