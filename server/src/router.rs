@@ -13,7 +13,7 @@ pub async fn api_router<S: Send + Sync>(ctx: service::Ctx) -> axum::Router<S> {
         )
         .route(
             "/v1/api/upvote/:id/",
-            axum::routing::get(crate::controller::upvote),
+            axum::routing::post(crate::controller::upvote),
         )
         .route(
             "/v1/api/questions/",

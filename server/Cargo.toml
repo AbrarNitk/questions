@@ -17,7 +17,7 @@ serde_json = { workspace = true }
 
 # Database
 sqlx = { workspace = true, features = ["postgres"] }
-chrono = { workspace = true }
+chrono = { workspace = true, features = ["serde"] }
 
 # Logging related dependencies
 tracing = { workspace = true }

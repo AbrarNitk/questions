@@ -29,8 +29,10 @@ pub async fn upvote(
     }
 }
 
-pub async fn list() -> axum::response::Response {
-    match service::apis::list_questions::list().await {
+pub async fn list(
+    axum::extract::State(ctx): axum::extract::State<service::Ctx>,
+) -> axum::response::Response {
+    match service::apis::list_questions::list(&ctx).await {
         Ok(r) => service::response::success(r),
         Err(err) => service::response::error(
             err.to_string(),

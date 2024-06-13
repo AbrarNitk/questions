@@ -1,11 +1,11 @@
 meta {
-  name: Upvote Question
+  name: List Questions
   type: http
-  seq: 3
+  seq: 4
 }
 
-post {
-  url: http://127.0.0.1:8000/v1/api/upvote/1/
+get {
+  url: http://127.0.0.1:8000/v1/api/questions/
   body: json
   auth: none
 }
